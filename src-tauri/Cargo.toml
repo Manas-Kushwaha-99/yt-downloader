@@ -1,0 +1,23 @@
+[package]
+name = "yt-downloader"
+version = "1.0.0"
+description = "YouTube video downloader using yt-dlp"
+authors = ["Manas Kushwaha"]
+edition = "2021"
+
+[lib]
+name = "yt_downloader_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-shell = "2"
+tokio = { version = "1", features = ["process", "io-util"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+regex = "1"
+time = "=0.3.49"
